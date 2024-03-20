@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        homeBanner: "url(../dist/img/banner-img.png)"
+        homeBanner: "url(../dist/img/banner-img.png)",
+        project1: "url(../dist/img/projects1.png)",
+        project2: "url(../dist/img/projects2.png)",
+        project3: "url(../dist/img/projects3.png)",
       },
       colors:{
         light: "#ffffff",

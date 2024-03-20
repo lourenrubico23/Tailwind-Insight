@@ -593,34 +593,27 @@ video {
 }
 
 .branding {
-  align-items: center;
-  gap: 3rem;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .branding {
-    display: flex;
+    display: block;
   }
 }
 
-.branding img {
-  width: 5rem;
-}
-
 .branding .header__navd {
-  display: none;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .branding .header__navd {
     display: flex;
-    --tw-translate-x: 25rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    gap: 2.5rem;
   }
 }
 
 .branding .header__navd li a {
+  padding: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -657,6 +650,7 @@ video {
 @media (min-width: 768px) {
   .header__action {
     position: static;
+    display: none;
     height: -moz-fit-content;
     height: fit-content;
     width: -moz-fit-content;
@@ -665,6 +659,10 @@ video {
     --tw-shadow-colored: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
+}
+
+.header__action a {
+  padding: 0.5rem;
 }
 
 .header__action.open {
@@ -702,7 +700,6 @@ video {
   margin-right: auto;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(255 64 65 / var(--tw-text-opacity));
   transition-property: all;
@@ -715,7 +712,6 @@ video {
   margin-right: auto;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(255 64 65 / var(--tw-text-opacity));
   transition-property: all;
@@ -857,6 +853,7 @@ video {
 
 .header__wrapper {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
@@ -965,7 +962,6 @@ video {
   justify-content: center;
   border-radius: 1rem;
   border-width: 1px;
-  padding: 2rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -985,12 +981,29 @@ video {
   }
 }
 
+.services__infoCard:hover .btn.bg--square {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 64 65 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .services__infoCard h3 {
   margin-bottom: 2rem;
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
+}
+
+.services__contents {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 64 65 / var(--tw-border-opacity));
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .services__infoCard p {
@@ -1005,10 +1018,6 @@ video {
 }
 
 .services__infoCard .services__btn {
-  margin-top: 2rem;
-  border-top-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(255 64 65 / var(--tw-border-opacity));
   text-align: center;
 }
 
@@ -1029,12 +1038,36 @@ video {
 .projects__cards {
   position: relative;
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .projects__cards {
     width: 100%;
   }
+}
+
+.projects__cards:first-child {
+  height: 80vh;
+  background-image: url(../dist/img/projects1.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.projects__cards:nth-child(2) {
+  height: 80vh;
+  background-image: url(../dist/img/projects2.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.projects__cards:last-child {
+  height: 80vh;
+  background-image: url(../dist/img/projects3.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .projects__cards::before {
@@ -1064,17 +1097,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.projects__info::before {
-  opacity: 0;
-}
-
-.projects__info:hover::before {
-  opacity: 1;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 @media (min-width: 768px) {
   .projects__cards img {
     width: 100%;
@@ -1082,11 +1104,6 @@ video {
 }
 
 .projects__cards .projects__info {
-  position: absolute;
-  top: 20%;
-  left: 12%;
-  z-index: 999;
-  height: 19rem;
   width: 20rem;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.7;
@@ -1097,17 +1114,19 @@ video {
 
 @media (min-width: 768px) {
   .projects__cards .projects__info {
-    left: 17%;
-    top: 15rem;
-    margin-left: auto;
-    margin-right: auto;
-    height: 20rem;
-    width: 25rem;
     padding: 1.75rem;
+    opacity: 0;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
+}
+
+.projects__cards:hover .projects__info {
+  opacity: 1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 .projects__cards h3 {
@@ -1132,13 +1151,12 @@ video {
 }
 
 .projects__cards .projects__info a {
-  margin-left: 5rem;
-}
-
-@media (min-width: 768px) {
-  .projects__cards .projects__info a {
-    margin-left: 35%;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-direction: column;
 }
 
 /* -------------------------Contacts--------------------- */
@@ -1366,18 +1384,10 @@ video {
 }
 
 .btn.bg--square {
-  margin-top: 1rem;
   border-radius: 0px;
   padding: 0.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 64 65 / var(--tw-text-opacity));
-}
-
-.btn.bg--square:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 64 65 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .container {
