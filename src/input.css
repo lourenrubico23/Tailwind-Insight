@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto;
+}
+
+@layer components{
+
+    /* ---------------------------Header------------------------ */
+    
+    .header{
+        @apply bg-homeBanner h-[70vh] bg-cover md:h-[100vh]
+    }
+    .branding{
+        @apply md:flex items-center gap-12 
+    }
+    .branding img{
+        @apply w-20
+    }
+    .branding .header__navd{
+        @apply hidden md:flex md:gap-10 md:translate-x-[25rem]
+    }
+    .branding .header__navd li a{
+        @apply font-medium text-sm text-light md:text-[1rem] 
+    }
+    .header__action{
+        @apply bg-dark absolute top-[0rem] right-0 w-0 h-[100vh] px-0 pt-0 overflow-hidden transition-all shadow-md
+        md:static md:h-fit md:w-fit md:shadow-none
+    }
+    .header__action.open{
+        @apply w-[100%] px-10 pt-10 transition-all
+    }
+    .header__action .header__navm{
+        @apply  pb-5 flex flex-col justify-center gap-9 m-24
+        md:hidden
+    }
+    .header__action .header__navm li:hover a{
+        @apply  text-lightred
+    }
+    .header__action .header__navm li a:hover{
+        @apply  p-2 bg-light text-lightred mx-auto transition-all
+    }
+    .branding .header__navd li a:hover{
+        @apply  p-2 bg-light text-lightred mx-auto transition-all
+    }
+    .header__action .header__navm li a{
+        @apply  font-bold text-2xl text-light 
+    }
+    .header__action .header__navm li{
+        @apply text-center transition-all
+    }
+    .header__action .header__socials{
+        @apply flex justify-center text-light w-[11rem] md:hidden
+    }
+    .header__action .header__socials li{
+        @apply mx-auto text-2xl p-2
+    }
+    .header__action .header__socialBottom{
+        @apply flex flex-col justify-center items-center gap-10 md:hidden
+    }
+    .header__action .header__socials li:first-child:hover{
+        @apply text-lightyellow bg-light w-12 mx-auto text-center transition-all
+    }
+    .header__action .header__socials li:nth-child(2):hover{
+        @apply text-lightblue bg-light w-12 mx-auto text-center transition-all
+    }
+    .header__action .header__socials li:last-child:hover{
+        @apply text-darkblue bg-light w-12 mx-auto text-center transition-all
+    }
+    .header__action img{
+        @apply mx-auto
+    }
+    .burger__menu{
+        @apply md:hidden
+    }
+    .burger__menu span{
+        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all 
+    }
+    .burger__menu span:nth-child(2){
+        @apply my-1 w-5 translate-x-1
+    }
+    .burger__menu span:nth-child(3){
+        @apply my-1 w-4 translate-x-2
+    }
+    .header__wrapper{
+        @apply flex items-center justify-between
+    }
+    .burger__menu.open span:first-child{
+        @apply transform translate-x-[1px] translate-y-[13px] rotate-[225deg] transition-all
+    }
+    .burger__menu.open span:nth-child(2){
+        @apply w-[1.5rem] h-[.2rem] opacity-0 transition-all
+    }
+    .burger__menu.open span:last-child{
+        @apply w-[1.5rem] h-[.2rem] transform translate-x-[-.2px] translate-y-[-1px] rotate-[-225deg] transition-all
+    }
+    .header__content{
+        @apply m-10 mt-16 flex flex-col text-center
+    }
+    .header__content h1{
+        @apply text-[2.2rem] text-light md:text-[5rem] md:leading-[7rem] md:mt-28
+    }
+    .header__btn{
+        @apply mt-14 md:mx-auto
+    }
+    .header__btn ul{
+        @apply md:grid md:grid-cols-2 md:mx-auto md:gap-4
+    }
+    .header__btn ul li a{
+        @apply w-[20rem] md:w-[10rem]
+    }
+
+    /* ----------------------Services------------------- */
+
+    .services{
+        @apply py-6
+    }
+    .services__cards{
+        @apply md:grid md:grid-cols-3 md:gap-8
+    }
+    .services__infoCard{
+        @apply border-[1px] rounded-[1rem] shadow-md flex flex-col justify-center p-[2rem] mb-8 
+        md:hover:scale-[1.1] md:transition-all
+    }
+    .services__infoCard h3{
+        @apply text-2xl font-semibold text-center mb-8 
+    }
+    .services__infoCard p{
+        @apply text-justify mb-6
+    }
+    .services__infoCard ul li i{
+        @apply text-[.4rem] mr-3 items-center
+    }
+    .services__infoCard .services__btn{
+        @apply border-t-[1px]  border-lightred mt-8 text-center 
+    }
+    .services__infoCard .services__btn a{
+        @apply block w-[100%]
+    }
+    
+    /* ----------------------Projects------------ */
+    .projetcs{
+        @apply py-6
+    }
+    .projects__wrapper{
+        @apply md:grid md:grid-cols-3 
+    }
+    .projects__cards{
+        @apply mb-8 relative md:w-full 
+    }
+    .projects__cards::before{
+        @apply md:w-[100%] md:h-[100%] absolute top-0 left-0
+        content-[""] md:bg-black md:opacity-60 transition-all duration-500
+    }
+    .projects__cards:hover::before{
+        @apply scale-0
+    }
+    .projects__info::before{
+        @apply opacity-0
+    }
+    .projects__info:hover::before{
+        @apply opacity-100 transition-all
+    }
+    .projects__cards img{
+        @apply md:w-full
+    }
+    .projects__cards .projects__info{
+        @apply absolute z-[999] bg-black bg-opacity-70 text-light p-5 w-[20rem] h-[19rem] top-[20%] 
+        left-[12%] md:left-[17%] md:mx-auto md:transition-all md:w-[25rem] md:h-[20rem] md:p-7 md:top-[15rem]
+    }
+    .projects__cards h3{
+        @apply text-center text-2xl font-semibold mb-4 md:text-3xl md:m-6
+    }
+    .projects__cards p{
+        @apply text-justify mb-4
+    }
+    .projects__cards .projects__info a{
+        @apply ml-[5rem] md:ml-[35%]
+    }
+
+    /* -------------------------Contacts--------------------- */
+    .contact{
+        @apply py-6 mb-[10rem]
+    }
+    .contact__address{
+        @apply md:grid md:grid-cols-2
+    }
+    .contact__address .contact__info{
+        @apply md:translate-x-[50rem]
+    }
+    .contact__wrapper ul li{
+        @apply mb-8
+    }
+    .contact__wrapper ul li i{
+        @apply text-lightred mr-3 text-sm
+    }
+    .contact__form{
+        @apply border-[1px] rounded-[1rem] shadow-md flex flex-col p-5 md:absolute md:bg-light md:w-[40rem] md:h-[26rem]
+    }
+    .contact__form input{
+        @apply border-[1px] rounded-[.5rem] border-lightgray h-12 mb-4
+    }
+    .contact__form textarea{
+        @apply border-[1px] rounded-[.5rem] border-lightgray
+    }
+    .contact__form a{
+        @apply w-[35%] translate-x-56 md:w-[20%] md:translate-x-[30rem]
+    }
+
+    /* ----------------------Footer--------------------- */
+    .footer{
+        @apply py-6 bg-lightgray md:py-10
+    }
+    .footer__content .footer__socials ul li i{
+        @apply text-light
+    }
+    .footer__content .footer__socials ul{
+        @apply flex gap-10 mx-auto mb-6
+    }
+    .footer__wrapper{
+        @apply flex justify-center 
+    }
+    .footer__content p{
+        @apply  text-light text-center
+    }
+    .footer__content img{
+        @apply mx-auto mb-6
+    }
+    .footer__content{
+        @apply md:grid md:grid-cols-[_1fr,_1fr,_1fr] md:w-[80rem] md:m-auto
+    }
+    
+    
+}
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full border-transparent border-[1px] text-sm font-medium
+    }
+    .btn.bg--dark{
+        @apply bg-dark text-light
+    }
+    .btn.bg--lightred{
+        @apply bg-lightred text-light rounded-3xl p-3 mt-4 hover:bg-light hover:text-lightred
+    }
+    .btn.bg--transparent{
+        @apply  text-light rounded-3xl p-3 mt-4 hover:text-lightred hover:bg-light border-light border-[1px]
+    }
+    .btn.bg--square{
+        @apply text-lightred p-3 mt-4 hover:text-light hover:bg-lightred rounded-none
+    }
+}
