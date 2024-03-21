@@ -20,11 +20,11 @@
         @apply md:flex items-center 
     }
     .branding .header__navd li a{
-        @apply font-medium text-sm text-light md:text-[1rem] p-2
+        @apply font-medium text-sm text-light md:text-[1rem] p-2 
     }
     .header__action{
         @apply bg-dark absolute top-[0rem] right-0 w-0 h-[100vh] px-0 pt-0 overflow-hidden transition-all shadow-md
-        md:static md:h-fit md:w-fit md:shadow-none md:hidden
+        md:static md:h-fit md:w-fit md:shadow-none md:hidden 
     }
     .header__action a{
         @apply p-2
@@ -33,41 +33,41 @@
         @apply w-[100%] px-10 pt-10 transition-all
     }
     .header__action .header__navm{
-        @apply  pb-5 flex flex-col justify-center gap-9 m-24
+        @apply flex flex-col justify-center mt-[50%] 
         md:hidden
     }
     .header__action .header__navm li:hover a{
-        @apply  text-lightred
-    }
-    .header__action .header__navm li a:hover{
-        @apply  bg-light text-lightred mx-auto transition-all
+        @apply  bg-light text-lightred transition-all px-[5rem]
     }
     .branding .header__navd li a:hover{
         @apply  bg-light text-lightred mx-auto transition-all
     }
     .header__action .header__navm li a{
-        @apply  font-bold text-2xl text-light 
+        @apply  font-bold text-2xl text-light px-7
     }
     .header__action .header__navm li{
-        @apply text-center transition-all
+        @apply text-center p-2 
     }
     .header__action .header__socials{
-        @apply flex justify-center text-light w-[11rem] md:hidden
+        @apply flex justify-center text-light mt-10 md:hidden
+    }
+    .header__action .header__socials li:last-child{
+        @apply w-full
     }
     .header__action .header__socials li{
-        @apply mx-auto text-2xl p-2
+        @apply text-2xl p-3 m-1
     }
     .header__action .header__socialBottom{
         @apply flex flex-col justify-center items-center gap-10 md:hidden
     }
     .header__action .header__socials li:first-child:hover{
-        @apply text-lightyellow bg-light w-12 mx-auto text-center transition-all
+        @apply text-lightyellow bg-light w-[3rem] text-center transition-all
     }
     .header__action .header__socials li:nth-child(2):hover{
-        @apply text-lightblue bg-light w-12 mx-auto text-center transition-all
+        @apply text-lightblue bg-light w-[3rem] text-center transition-all
     }
     .header__action .header__socials li:last-child:hover{
-        @apply text-darkblue bg-light w-12 mx-auto text-center transition-all
+        @apply text-darkblue bg-light w-full text-center transition-all
     }
     .header__action img{
         @apply mx-auto
@@ -79,22 +79,22 @@
         @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all 
     }
     .burger__menu span:nth-child(2){
-        @apply my-1 w-5 translate-x-1
+        @apply my-1 w-5 h-[.2rem] translate-x-1
     }
     .burger__menu span:nth-child(3){
-        @apply my-1 w-4 translate-x-2
+        @apply my-1 w-4 h-[.2rem] translate-x-2
     }
     .header__wrapper{
         @apply flex items-center justify-between w-full
     }
     .burger__menu.open span:first-child{
-        @apply transform translate-x-[1px] translate-y-[13px] rotate-[225deg] transition-all
+        @apply transform translate-x-[1px] translate-y-[16px] rotate-[225deg] transition-all
     }
     .burger__menu.open span:nth-child(2){
         @apply w-[1.5rem] h-[.2rem] opacity-0 transition-all
     }
     .burger__menu.open span:last-child{
-        @apply w-[1.5rem] h-[.2rem] transform translate-x-[-.2px] translate-y-[-1px] rotate-[-225deg] transition-all
+        @apply w-[1.5rem] h-[.2rem] transform translate-x-[-.1px] translate-y-[1px] rotate-[-225deg] transition-all
     }
     .header__content{
         @apply m-10 mt-16 flex flex-col text-center
@@ -193,13 +193,13 @@
 
     /* -------------------------Contacts--------------------- */
     .contact{
-        @apply py-6 mb-[10rem]
+        @apply py-6 mb-[2rem]  md:mb-[10rem]
     }
     .contact__address{
-        @apply md:grid md:grid-cols-2
+        @apply  md:flex justify-end w-full
     }
     .contact__address .contact__info{
-        @apply md:translate-x-[50rem]
+        @apply md:items-end
     }
     .contact__wrapper ul li{
         @apply mb-8
@@ -208,16 +208,16 @@
         @apply text-lightred mr-3 text-sm
     }
     .contact__form{
-        @apply border-[1px] rounded-[1rem] shadow-md flex flex-col p-5 md:absolute md:bg-light md:w-[40rem] md:h-[26rem]
+        @apply border-[1px] rounded-[1rem] shadow-md flex flex-col p-5 md:absolute md:mr-[40.5%] md:bg-light md:w-[40rem] md:h-[26rem] 
     }
     .contact__form input{
-        @apply border-[1px] rounded-[.5rem] border-lightgray h-12 mb-4
+        @apply border-[1px] rounded-[.5rem] border-lightgray h-12 mb-4 p-2.5
     }
     .contact__form textarea{
-        @apply border-[1px] rounded-[.5rem] border-lightgray
+        @apply border-[1px] rounded-[.5rem] border-lightgray p-2.5 w-full resize-none
     }
     .contact__form a{
-        @apply w-[35%] translate-x-56 md:w-[20%] md:translate-x-[30rem]
+        @apply w-fit flex flex-col ml-[65%] md:ml-[80%]
     }
 
     /* ----------------------Footer--------------------- */
